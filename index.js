@@ -1,6 +1,6 @@
-import Koa from "koa"
-import proxy from "koa-proxy"
-import dotenv from "dotenv"
+const Koa = require("koa")
+const proxy = require("koa-proxy")
+const dotenv = require("dotenv")
 dotenv.config()
 
 const app = new Koa()

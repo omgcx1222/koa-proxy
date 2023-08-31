@@ -2,28 +2,16 @@
   "name": "koa-proxy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "esno ./src/index.ts",
-    "dev": "esno watch ./src/index.ts",
-    "prod": "esno ./build/index.js",
-    "build": "pnpm clean && tsup",
-    "clean": "rimraf build",
-    "common:cleanup": "rimraf node_modules && rimraf pnpm-lock.yaml"
+    "build": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "esno": "^0.17.0",
     "koa": "^2.14.2",
     "koa-proxy": "1.0.0-alpha.3"
-  },
-  "devDependencies": {
-    "@types/koa": "^2.13.8",
-    "@types/node": "^20.5.7",
-    "tsup": "^7.2.0",
-    "rimraf": "^4.3.0"
   }
 }
