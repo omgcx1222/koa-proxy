@@ -6,9 +6,10 @@
   "scripts": {
     "start": "esno ./src/main.ts",
     "dev": "esno watch ./src/main.ts",
-    "prod": "node ./build/main.mjs",
+    "prod": "esno ./build/main.js",
     "build": "pnpm clean && tsup",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf build",
+    "common:cleanup": "rimraf node_modules && rimraf pnpm-lock.yaml"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@types/koa": "^2.13.8",
     "@types/node": "^20.5.7",
-    "tsup": "^7.2.0"
+    "tsup": "^7.2.0",
+    "rimraf": "^4.3.0"
   }
 }
