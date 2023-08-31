@@ -8,8 +8,7 @@ const app = new Koa()
 app.use(
   proxy({
     host: process.env.PROXY_URL,
-    match: /^\/proxy/,
-    map: (path: string) => path.replace(/^\/proxy/, ""),
+    match: "",
   })
 )
 
