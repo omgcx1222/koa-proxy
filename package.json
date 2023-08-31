@@ -2,11 +2,11 @@
   "name": "koa-proxy",
   "version": "1.0.0",
   "description": "",
-  "main": "main.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "esno ./src/main.ts",
-    "dev": "esno watch ./src/main.ts",
-    "prod": "esno ./build/main.js",
+    "start": "esno ./src/index.ts",
+    "dev": "esno watch ./src/index.ts",
+    "prod": "esno ./build/index.js",
     "build": "pnpm clean && tsup",
     "clean": "rimraf build",
     "common:cleanup": "rimraf node_modules && rimraf pnpm-lock.yaml"
