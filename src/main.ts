@@ -1,6 +1,6 @@
-const Koa = require("koa")
-const proxy = require("koa-proxy")
-const dotenv = require("dotenv")
+import Koa from "koa"
+import proxy from "koa-proxy"
+import dotenv from "dotenv"
 dotenv.config()
 
 const app = new Koa()
@@ -9,7 +9,7 @@ app.use(
   proxy({
     host: process.env.PROXY_URL,
     match: /^\/proxy/,
-    map: (path) => path.replace(/^\/proxy/, ""),
+    map: (path: string) => path.replace(/^\/proxy/, ""),
   })
 )
 
