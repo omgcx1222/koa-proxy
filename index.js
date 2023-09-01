@@ -12,11 +12,12 @@ const app = express()
 app.use(
   "/v1/",
   createProxyMiddleware({
-    target: "https://api.openai.com",
+    // target: "https://api.openai.com",
+    target: "http://sqgghqq.com:3002",
     changeOrigin: true,
     onProxyReq: (proxyReq, req, res) => {
-      console.log(req.originalUrl)
-      proxyReq.setHeader("Authorization", `Bearer ${process.env.OPENAI_KEY}`)
+      const apiKey = req.headers?.authorization ?? `Bearer ${process.env.OPENAI_KEY}`
+      proxyReq.setHeader("Authorization", apiKey)
     },
     onProxyRes: (proxyRes, req, res) => {
       proxyRes.headers["Access-Control-Allow-Origin"] = "*"
